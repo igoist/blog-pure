@@ -1,3 +1,4 @@
+/* for toggle-00-00 */
 .custom-toggle {
     width: 34px;
     height: 34px;
@@ -47,10 +48,30 @@
     transform: rotate(45deg);
 }
 
-#toggle2 {
-    position: absolute;
-    top: 0;
+/* for toggle-01-00 */
+
+#toggle-01-00 {
     right: 40px;
+}
+
+#toggle-01-00.x .bar:first-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#toggle-01-00.x .bar {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+/* for toggle2 */
+
+#toggle2 {
+    right: 80px;
 }
 
 #toggle2 .bar {
@@ -81,7 +102,7 @@
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
-    /*opacity: 0;*/
+    opacity: 0;
 }
 #toggle2.x .bar:last-child {
     -webkit-transform: rotate(45deg);
@@ -94,7 +115,7 @@
 #toggle3 {
     position: absolute;
     top: 0;
-    right: 80px;
+    right: 120px;
 }
 
 #toggle3 .bar {
@@ -140,46 +161,185 @@
 #toggle4 {
     position: absolute;
     top: 0;
-    right: 120px;
+    right: 160px;
 }
 
 #toggle4 .bar {
     width: 2px;
     height: 20px;
-    top: 7px;
-    right: 17px;
+    top: 8px;
+    right: 16px;
 }
 
 #toggle4 .bar:first-child {
+    -webkit-transform: translateX(-3px);
+    -moz-transform: translateX(-3px);
+    -ms-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+#toggle4 .bar:last-child {
+    -webkit-transform: translateX(3px);
+    -moz-transform: translateX(3px);
+    -ms-transform: translateX(3px);
+    transform: translateX(3px);
+}
+#toggle4.x .bar:first-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 1;
+}
+
+#toggle4.x .bar:last-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+
+/* -- toggle 04-00 -- */
+
+#toggle-04-00 {
+    position: absolute;
+    top: 0;
+    right: 200px;
+}
+
+#toggle-04-00 .bar {
+    width: 2px;
+    height: 20px;
+    top: 8px;
+    right: 16px;
+}
+
+#toggle-04-00 .bar:first-child {
+    -webkit-transform: translateX(-3px);
+    -moz-transform: translateX(-3px);
+    -ms-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+#toggle-04-00 .bar:last-child {
+    -webkit-transform: translateX(3px);
+    -moz-transform: translateX(3px);
+    -ms-transform: translateX(3px);
+    transform: translateX(3px);
+}
+#toggle-04-00.x .bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+
+#toggle-04-00.x .bar:last-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 1;
+}
+
+/* for toggle-05-00 */
+
+#toggle-05-00 {
+    right: 240px;
+}
+
+#toggle-05-00 .bar {
+    width: 2px;
+    height: 20px;
+    top: 8px;
+    right: 16px;
+}
+
+#toggle-05-00 .bar:first-child {
     -webkit-transform: translateX(-6px);
     -moz-transform: translateX(-6px);
     -ms-transform: translateX(-6px);
     transform: translateX(-6px);
 }
-#toggle4 .bar:last-child {
+#toggle-05-00 .bar:last-child {
     -webkit-transform: translateX(6px);
     -moz-transform: translateX(6px);
     -ms-transform: translateX(6px);
     transform: translateX(6px);
 }
-#toggle4.x .bar:first-child {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+#toggle-05-00.x .bar:first-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
     opacity: 1;
 }
-#toggle4.x .bar {
+#toggle-05-00.x .bar {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
     opacity: 0;
 }
-#toggle4.x .bar:last-child {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+#toggle-05-00.x .bar:last-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
     opacity: 1;
+}
+
+/* for toggle-07-00 */
+
+#toggle-07-00 {
+    right: 280px;
+}
+
+#toggle-07-00 .bar {
+    width: 2px;
+    height: 20px;
+    top: 8px;
+    right: 16px;
+}
+
+#toggle-07-00 .bar:first-child {
+    -webkit-transform: translateX(-6px);
+    -moz-transform: translateX(-6px);
+    -ms-transform: translateX(-6px);
+    transform: translateX(-6px);
+}
+#toggle-07-00 .bar:last-child {
+    -webkit-transform: translateX(6px);
+    -moz-transform: translateX(6px);
+    -ms-transform: translateX(6px);
+    transform: translateX(6px);
+}
+#toggle-07-00.x .bar:first-child {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 1;
+}
+#toggle-07-00.x .bar {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 0;
+}
+#toggle-07-00.x .bar:last-child {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    opacity: 1;
+}
+
+#toggle-07-00 {
+    transition: all 1s ease;
+    color: #fff;
+}
+#toggle-07-00:hover {
+    transform:scale(1.5);
 }

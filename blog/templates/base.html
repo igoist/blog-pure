@@ -7,29 +7,45 @@
     <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
 
     <title>My Blog</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-    <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
+    <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/pure-min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/grids-responsive-min.css' %}">
+    <!-- <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css"> -->
 
+    <!-- <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css"> -->
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/animation.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'google-code-prettify/prettify.css' %}" />
 
 </head>
-<body>
+<body onload="prettyPrint()">
     <div id="layout" class="pure-g">
-        <div id="sidebar" class="sidebar pure-u-1 pure-u-md-1-8">
+        <div id="sidebar" class="sidebar pure-u-1 pure-u-md-1-4">
             <div class="header">
-                <h1 class="brand-title">天痕<br />Blog</h1>
-                <h2 class="brand-tagline">走你 <br /> take off</h2>
+                <h1 class="brand-title">天痕˚<br />Blog</h1>
+                <h2 class="brand-tagline">走你<br /> take off</h2>
                 <nav class="nav">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="pure-button" href="https://github.com/Andrew-liu">Github</a>
+                            <a class="button-success pure-button" href="/">主页</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
-                        </li> -->
+                        <li class="nav-item">
+                            <a class="button-success pure-button" href="/">归档</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="pure-button" href="https://github.com/Andrew-liu/my_blog_tutorial">Github</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-error pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-success pure-button" href="/">专题</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="button-success pure-button" href="/">About Me</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -38,13 +54,21 @@
         <div class="content pure-u-1 pure-u-md-3-4">
             <div class="container-toggle">
 
-                <a href="#" class="custom-toggle" id="toggle4"><s class="bar"></s><s class="bar"></s></s></a>
+                <a href="#" class="custom-toggle" id="toggle-07-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
 
-                <a href="#" class="custom-toggle" id="toggle3"><s class="bar"></s><s class="bar"></s><s class="bar"></s></a>
+                <a href="#" class="custom-toggle" id="toggle-05-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
 
-                <a href="#" class="custom-toggle" id="toggle2"><s class="bar"></s><s class="bar"></s><s class="bar"></s></a>
+                <a href="#" class="custom-toggle" id="toggle-04-00"><del class="bar"></del><del class="bar"></del></a>
 
-                <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
+                <a href="#" class="custom-toggle" id="toggle4"><del class="bar"></del><del class="bar"></del></a>
+
+                <a href="#" class="custom-toggle" id="toggle3"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+
+                <a href="#" class="custom-toggle" id="toggle2"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+
+                <a href="#" class="custom-toggle" id="toggle-01-00"><del class="bar"></del><del class="bar"></del></a>
+                <a href="#" class="custom-toggle" id="toggle-00-00"><s class="bar"></s><s class="bar"></s></a>
+
             </div>
             <div>
                 {% block content %}
@@ -61,6 +85,13 @@
             </div>
         </div>
     </div>
+
     <script src="{% static 'js/toggle.js' %}"></script>
+
+    <script src="{% static 'google-code-prettify/prettify.js' %}"></script>
+
+    <script id="dsq-count-scr" src="//igoist.disqus.com/count.js" async></script>
+
+
 </body>
 </html>

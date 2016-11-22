@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load custom_markdown %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'google-code-prettify/prettify.css' %}" />
+
+<div class="posts">
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title">{{ post.title }}</h2>
+
+                <p class="post-meta">
+                    By <a href="">天痕˚</a> Under <a class="post-category post-category-js" href="">{{ post.category }}</a>&nbsp;&nbsp;&nbsp;&nbsp;Time:  <a class="post-author" href="#">{{ post.date_time|date:"Y /m /d"}}</a>
+                </p>
+        </header>
+
+        <div class="post-description">
+            <pre  class="prettyprint">
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    @IBAction func showAlert() {
+        let alert = UIAlertController(title: "欢迎",
+                                      message: "首个App",
+                                      preferredStyle: .Alert)
+        let action = UIAlertAction(title: "确定",
+                                   style: .Default,
+                                   handler: {
+                                    _ in print("点击了确定")
+                                    })
+        let action2 = UIAlertAction(title: "取消",
+                                   style: .Cancel,
+                                   handler: nil)
+        alert.addAction(action2)
+        alert.addAction(action)
+
+
+        presentViewController(alert, animated: true, completion: nil)
+
+        print("alert success")
+
+    }
+
+    @IBAction func sliderMoved(slider: UISlider) {
+        print("The value of the slider is now: \(slider.value)")
+    }
+
+    @IBAction func sliderDoubleClicked() {
+        print("The slider is dbclicked~!")
+    }
+
+    enum Rank: Int {
+        case Ace = 1
+        case Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten
+        case Jack, Queen, King
+        func simpleDescription() -> String {
+            switch self {
+            case .Ace:
+                return "ace"
+            case .Jack:
+                return "jack"
+            case .Queen:
+                return "queen"
+            case .King:
+                return "king"
+            default:
+                return String(self.rawValue)
+            }
+        }
+    }
+
+}
+
+            </pre>
+            <p>
+                {{ post.content|custom_markdown }}
+            </p>
+        </div>
+    </section>
+
+    <!-- {% include "disqus2.html" %} -->
+</div><!-- /.blog-post -->
+
+<script src="{% static 'google-code-prettify/prettify.js' %}"></script>
+{% endblock %}
