@@ -1,3 +1,100 @@
 body {
-  background: #123;
+  margin: 0 auto;
+  /*width: 960px;*/
+  /*height: 1000px;*/
+  background-color: #f0f0f0;
+  background-image: url(../img/rect.png);
 }
+
+#sp {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 300px;
+  height: 400px;
+  /*background-image: url(../img/resume/resu.jpg);*/
+  background-size:300px 400px;
+}
+
+#wrap {
+  width: 800px;
+  height: 1000px;
+  /*background: #fff;*/
+  margin: 0 auto;
+}
+
+.font_head {
+  color: #a7a7a7;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.font_header {
+
+  color: #62c9e0;/*#4d8fe9;*/
+  font-size: 16px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.font_base {
+  color: #b7b7b7;
+  font-size: 12px;
+  margin: 0;
+}
+
+.card {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#pic {
+  margin: 0 auto;
+  margin-top: 32px;
+  width: 128px;
+  height: 128px;
+  background: url(../img/resume/pic.png);
+  background-size: 128px 128px;
+  border-radius: 8px;
+  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
