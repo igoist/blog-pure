@@ -8,7 +8,50 @@
     body {
 
     }
+
+
   </style>
+  <script type="text/javascript">
+    !function(e) {
+        function n(o) {
+            if (t[o])
+                return t[o].exports;
+            var r = t[o] = {
+                exports: {},
+                id: o,
+                loaded: !1
+            };
+            return e[o].call(r.exports, r, r.exports, n),
+            r.loaded = !0,
+            r.exports
+        }
+        var t = {};
+        return n.m = e,
+        n.c = t,
+        n.p = "",
+        n(0)
+    }({
+        0: function(e, n, t) {
+            "use strict";
+            t(405),
+            window.onload = function() {
+                var e = document.querySelector("#pic")
+                  , n = document.querySelector(".PolarBear")
+                  , t = document.querySelector(".Liukanshan");
+                e.addEventListener("mouseenter", function() {
+                    n.classList.add("PolarBear--out"),
+                    t.classList.remove("Liukanshan--in")
+                }),
+                e.addEventListener("mouseleave", function() {
+                    n.classList.remove("PolarBear--out"),
+                    t.classList.add("Liukanshan--in")
+                })
+            }
+        },
+        405: function(e, n) {}
+    });
+
+  </script>
 </head>
 <body>
 
@@ -18,9 +61,13 @@
 
   <div id="wrap">
 
-    <div id="pic">
-
+    <div id="pic_wrap">
+      <div id="pic"></div>
+      <div class="PolarBear"></div>
+      <div class="Liukanshan Liukanshan--in"></div>
     </div>
+
+
 
     <div id="name">
       <p class="font_head" style="padding-top: 4px;padding-bottom: 4px;">許天柱</p>
@@ -54,6 +101,7 @@
       <p class="font_header">附加信息</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">github地址：https://github.com/igoist/</p>
     </div>
+
 
   </div>
 
