@@ -21,7 +21,7 @@
     transform: translateY(3px);
 }
 .custom-toggle .bar {
-    background-color: #777;
+    background-color: #eee;
     display: block;
     width: 20px;
     height: 2px;
@@ -341,5 +341,5 @@
     color: #fff;
 }
 #toggle-07-00:hover {
-    transform:scale(1.5);
+    /*transform:scale(1.5);*/
 }

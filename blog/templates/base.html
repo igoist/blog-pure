@@ -2,96 +2,245 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A layout example that shows off a blog page with a list of posts.">
 
-    <title>My Blog</title>
-    <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/pure-min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/grids-responsive-min.css' %}">
-    <!-- <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css"> -->
+  <title>My Blog</title>
+  <!-- icon -->
+  <link rel="icon" type="image/png" href="{% static 'img/icon/star.png' %}" />
 
-    <!-- <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css"> -->
+  <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/pure-min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pure-release-0.6.0/grids-responsive-min.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animation.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}" />
+  <!-- <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css"> -->
 
-    <link rel="stylesheet" href="{% static 'google-code-prettify/prettify.css' %}" />
+  <!-- font css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/animation.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'google-code-prettify/prettify.css' %}" />
+  <style type="text/css">
+
+    header {
+      padding: 1rem 2rem;
+    }
+
+    header h1 {
+      margin: 0;
+      padding: 0;
+      color: #ccc;
+      font-size: 1.5rem;
+      font-weight: 100;
+    }
+
+
+
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    /*********************************************
+     * FONT FACES
+     *********************************************/
+    @font-face {
+      font-family: 'profile';
+      src: url("{% static 'font-awesome/fonts/fontawesome-webfont.eot' %}");
+      src: url("{% static 'font-awesome/fonts/FontAwesome.otf' %}") format('embedded-opentype'),
+           url("{% static 'font-awesome/fonts/fontawesome-webfont.woff' %}") format('woff'),
+           url("{% static 'font-awesome/fonts/fontawesome-webfont.ttf' %}") format('truetype'),
+           url("{% static 'font-awesome/fonts/fontawesome-webfont.svg' %}") format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    [class^="icon-"]:before, [class*=" icon-"]:before {
+      font-family: "profile";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 1em;
+
+      /* Animation center compensation - margins should be symmetric */
+      /* remove if not needed */
+      margin-left: .2em;
+
+      /* you can be more comfortable with increased icons size */
+      /* font-size: 120%; */
+
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+    }
+
+    /* 原来的 '\e800' 这种跟我用的这个 fontawesome 版本不同 */
+    .icon-twitter:before { content: '\f099'; } /* twitter */
+    .icon-weibo:before { content: '\f18a'; } /* weibo */
+    .icon-github-circled:before { content: '\f09b'; } /* github */
+  </style>
 </head>
 <body onload="prettyPrint()">
-    <div id="layout" class="pure-g">
-        <div id="sidebar" class="sidebar pure-u-1 pure-u-md-1-4">
-            <div class="header">
-                <h1 class="brand-title">天痕˚<br />Blog</h1>
-                <h2 class="brand-tagline">走你<br /> take off</h2>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item">
-                            <a class="button-success pure-button" href="/">主页</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="button-success pure-button" href="/">归档</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="pure-button" href="https://github.com/Andrew-liu/my_blog_tutorial">Github</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="button-error pure-button" href="http://weibo.com/dinosaurliu">Weibo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="button-success pure-button" href="/">专题</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="button-success pure-button" href="/">About Me</a>
-                        </li>
-                    </ul>
-                </nav>
+  <div id="layout" class="pure-g">
+
+    <!-- sidebar -->
+    <div id="sidebar" class="sidebar pure-u-1 pure-u-md-1-4">
+      <div class="header">
+        <h1 class="brand-title">天痕˚<br />Blog</h1>
+        <h2 class="brand-tagline">走你<br /> take off</h2>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="button-success pure-button" href="/">主页</a>
+            </li>
+            <li class="nav-item">
+              <a class="button-success pure-button" href="/">归档</a>
+            </li>
+            <li class="nav-item">
+              <a class="pure-button" href="https://github.com/igoist/">Github</a>
+            </li>
+            <li class="nav-item">
+              <a class="button-error pure-button" href="http://weibo.com/">Weibo</a>
+            </li>
+            <li class="nav-item">
+              <a class="button-success pure-button" href="/">专题</a>
+            </li>
+            <li class="nav-item">
+              <a class="button-success pure-button" href="/">About Me</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- end sidebar -->
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+      <!-- 条子 -->
+      <div class="container-toggle">
+        <a href="#" class="custom-toggle" id="toggle-07-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle-05-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle-04-00"><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle4"><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle3"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle2"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle-01-00"><del class="bar"></del><del class="bar"></del></a>
+        <a href="#" class="custom-toggle" id="toggle-00-00"><s class="bar"></s><s class="bar"></s></a>
+      </div>
+      <header>
+        <h1>Slideshows &raquo;</h1>
+      </header>
+      <div>
+        {% block content %}
+        {% endblock %}
+        <!-- <div class="footer">
+            <div class="pure-menu pure-menu-horizontal pure-menu-open">
+                <ul>
+                    <li><a href="http://andrewliu.tk/about/">About Me</a></li>
+                    <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
+                    <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
+                </ul>
+                <a href="#" title="@天痕˚" class="icon-weibo"></a>
+                <a href="https://twitter.com/iiegoist" title="@天痕˚" class="icon-twitter"></a>
+                <a href="https://github.com/igoist" title="@天痕˚" class="icon-github-circled"></a>
             </div>
-        </div>
-
-        <div class="content pure-u-1 pure-u-md-3-4">
-            <div class="container-toggle">
-
-                <a href="#" class="custom-toggle" id="toggle-07-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle-05-00"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle-04-00"><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle4"><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle3"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle2"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
-
-                <a href="#" class="custom-toggle" id="toggle-01-00"><del class="bar"></del><del class="bar"></del></a>
-                <a href="#" class="custom-toggle" id="toggle-00-00"><s class="bar"></s><s class="bar"></s></a>
-
-            </div>
-            <div>
-                {% block content %}
-                {% endblock %}
-                <div class="footer">
-                    <div class="pure-menu pure-menu-horizontal pure-menu-open">
-                        <ul>
-                            <li><a href="http://andrewliu.tk/about/">About Me</a></li>
-                            <li><a href="http://twitter.com/yuilibrary/">Twitter</a></li>
-                            <li><a href="http://github.com/yahoo/pure/">GitHub</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div> -->
+        <footer class="footer">
+          <address>
+            <p>辣鸡天痕˚ <small>@ <a href="#">我能进有赞吗?</a></small></p>
+            <p class="copyright">Text is available under the <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 License</a></p>
+            <p>
+              <a href="#" title="@天痕˚" class="icon-weibo">微博</a>
+              <a href="https://twitter.com/iiegoist" title="@天痕˚" class="icon-twitter">Twitter</a>
+              <a href="https://github.com/igoist" title="@天痕˚" class="icon-github-circled">Github</a>
+            </p>
+          </address>
+        </footer>
+      </div>
     </div>
 
-    <script src="{% static 'js/toggle.js' %}"></script>
 
-    <script src="{% static 'google-code-prettify/prettify.js' %}"></script>
+  </div>
 
-    <script id="dsq-count-scr" src="//igoist.disqus.com/count.js" async></script>
+  <script src="{% static 'js/toggle.js' %}"></script>
 
+  <!-- <script src="{% static 'google-code-prettify/prettify.js' %}"></script> -->
+  <!-- 上线之前，访问数据统计不必考虑 -->
+  <!-- <script id="dsq-count-scr" src="//igoist.disqus.com/count.js" async></script> -->
 
+  <!-- 大佬自己写的的颜色变化控制脚本 -->
+  <script src="{% static 'js/color.js' %}"></script>
+  <script>
+  var items = [].slice.call(document.querySelectorAll('.item'));
+
+  function createStyle(styleText) {
+    var style = document.createElement('style');
+    style.type = 'text/css';
+
+    // <style> element must be appended into DOM before setting `cssText`
+    // otherwise IE8 will interpret the text in IE7 mode.
+    document.body.appendChild(style);
+    if (style.styleSheet) {
+      style.styleSheet.cssText = styleText;
+    } else {
+      style.appendChild(document.createTextNode(styleText));
+    }
+
+    return style;
+  }
+
+  var gradientTpl = [
+    '.item:nth-child(${n}):hover {',
+      'background-image: -webkit-linear-gradient(-15deg, transparent 40%, ${end} 100%);',
+      'background-image: -moz-linear-gradient(-15deg, transparent 40%, ${end} 100%);',
+      'background-image: linear-gradient(105deg, transparent 40%, ${end} 100%);',
+      'background-repeat: repeat;',
+    '}'
+  ].join('');
+
+  var style;
+  function randomize() {
+    var colors = kolor.random({
+      size: items.length,
+      s: 0.7,
+      l: 0.8,
+      space: 'rgba'
+    });
+
+    var styleText = '';
+    items.forEach(function (item, i) {
+      item.style.borderColor = colors[i].css();
+
+      if (style) {
+        style.parentNode.removeChild(style);
+      }
+
+      styleText += gradientTpl.replace(/\$\{n\}/g, i + 1).replace(/\$\{end\}/g, colors[i].a(0.3).css());
+      style = createStyle(styleText);
+    });
+  }
+
+  setInterval(function () {
+    randomize();
+  }, 3000);
+
+  randomize();
+  </script>
 </body>
 </html>
