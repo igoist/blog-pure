@@ -1,0 +1,160 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'css/resume.css' %}" />
+  <style type="text/css">
+    body {
+
+    }
+
+
+  </style>
+  <script type="text/javascript">
+    !function(e) {
+        function n(o) {
+            if (t[o])
+                return t[o].exports;
+            var r = t[o] = {
+                exports: {},
+                id: o,
+                loaded: !1
+            };
+            return e[o].call(r.exports, r, r.exports, n),
+            r.loaded = !0,
+            r.exports
+        }
+        var t = {};
+        return n.m = e,
+        n.c = t,
+        n.p = "",
+        n(0)
+    }({
+        0: function(e, n, t) {
+            "use strict";
+            t(405),
+            window.onload = function() {
+                var e = document.querySelector("#pic")
+                  , n = document.querySelector(".PolarBear")
+                  , t = document.querySelector(".Liukanshan");
+                n.classList.add("PolarBear--out");
+                t.classList.remove("Liukanshan--in");
+                e.addEventListener("mouseenter", function() {
+                    n.classList.add("PolarBear--out"),
+                    t.classList.remove("Liukanshan--in")
+                }),
+                e.addEventListener("mouseleave", function() {
+                    n.classList.remove("PolarBear--out"),
+                    t.classList.add("Liukanshan--in")
+                })
+            }
+        },
+        405: function(e, n) {}
+    });
+
+  </script>
+</head>
+<body>
+
+  <!-- <div id="menu">
+    <a class="home-link" href="/">主页</a>
+    <a href="toc.html">目录</a>
+  </div> -->
+
+  <div id="sp">
+
+  </div>
+
+  <div id="wrap">
+
+    <div id="pic-wrap">
+      <div id="pic"></div>
+      <div class="PolarBear"></div>
+      <div class="Liukanshan Liukanshan--in"></div>
+    </div>
+
+    <!-- <div>
+      <div class="sp_d">div1</div>
+      <div class="sp_d">div2</div>
+      <div class="sp_d">div3</div>
+    </div> -->
+
+
+    <div id="name">
+      <p class="font_head" style="padding-top: 4px;padding-bottom: 4px;">许天柱</p>
+      <p class="font_base" style="text-align: center;">web平台开发实习生（杭州）</p>
+    </div>
+
+    <div id="introduction" class="card">
+      <p class="font_header">基本信息</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">个人籍贯：浙江宁波慈溪</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">出生年月：1994 年 8 月</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">就读学校：临安浙江农林大学</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">就读专业：计算机科学与技术（ Computer Science & Technology）</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">联系电话：18806529366</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">Q Q 邮箱：493512132@qq.com</p>
+    </div>
+
+    <div id="introduction" class="card">
+      <p class="font_header">个人简介</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">在校期间，学习了本专业学生需要念的各门课程，四年平均绩点在中上水平，无须多说</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">大学期间涉略很多了：C、C++、HTML5、CSS3、JS、Python、汇编、Swift、Java、Java Android、</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">C#、Objective-C、Shell...反正都有涉及，一下可能想不全</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">当然 C、C++、C# 这种都是课内的，Java 课内也都只是基础，Spring、Hibernate、Dubble、</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">Maven 这些在后来实习中才有接触，大都得靠自己课外看兴趣学</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">==========================我是一条分割线==========================</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;"></p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">Web 相关的项目做的最多，Javascript、Query、Ajax 这些肯定经常用</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">大二开始接触 Web 三剑客以及 python，一开始做项目用的就是 Django </p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">有代码洁癖，有一台 15 年的 15 寸 MBPR </p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">==========================我是一条分割线==========================</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">很自觉终身学习，希望全职实习，能够加班，之前在校时经常晚上将近 11 点回寝室，但求工作能稳定</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">三观正，与人相处友善，锵锵三人行、圆桌派忠实观众，因职业知识技能需求不得已而显得有些宅</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">简而言之，自我评价不错，希望能进入氛围好的团队一起好好工作学习进步 ：）</p>
+
+    </div>
+
+    <div id="experience" class="card">
+      <p class="font_header">工作经历</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">2014 年 11 月 - 2016 年 4 月</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">期间一直跟随学校老师，在 linux 平台上进行基于 Django 对学校内外相关网站、系统前端与后端开发、维护</p>
+
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">2016 年 10 月 - 2016年 12 月</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">在杭州拱墅优机菜圃，担任java程序员，编写配送系统子组件后台实现与前端页面</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">后因公司搬迁，整个部门散伙（我也很无奈啊）</p>
+
+    </div>
+
+    <div id="experience-proj" class="card">
+      <p class="font_header">项目经历</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">2015 年期间</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">Web 相关东西写了挺多了，项目都放在服务器上不好讲，这里只放几个很早挂上线的网站当作例子吧：</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">学校动科院 - <a href="http://cast.zafu.edu.cn/">http://cast.zafu.edu.cn/</a> ｜ 园林学院 - <a href="http://laas.zafu.edu.cn/">http://laas.zafu.edu.cn/</a> ｜ 理学院 - <a href="http://lxy.zafu.edu.cn/">http://lxy.zafu.edu.cn/</a></p>
+
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">2016 年 10 月 - 2016 年 12 月</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">部门里当时项目是写农产品配送系统，我负责在构建一个单元模块，完成其相关具体前端展示、数据交互，后台各种查询请求的处理逻辑</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">也包括数据库内建表，各种修改</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">说说是java工程师，感觉每天更多的都是在跟 js 这块打交道</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">时而是为了实现老大布置的那比较抽象的效果而头疼，时而考虑 js 同步异步，去考虑请求的优化，Console、Source 里各种调试</p>
+
+    </div>
+
+    <!-- <div id="et" class="card">
+      <p class="font_header">附加信息</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">自己博客尚未上线...</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">github 地址：https://github.com/igoist/ </p>
+    </div> -->
+
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+

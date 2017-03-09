@@ -11,5 +11,11 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'article.views.home'),
     url(r'^article/', include('article.urls')),
+
+    url(r'^resume_templete/$', 'blog.views.resume_templete'),
     url(r'^resume/$', 'blog.views.resume'),
+    url(r'^resume_wy/$', 'blog.views.resume_wy'),
+    url(r'^resume_smss/$', 'blog.views.resume_smss'),
+
+    url(r'^slideshow/', include('slideshow.urls')),
 )

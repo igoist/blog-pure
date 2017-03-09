@@ -38,6 +38,8 @@
                 var e = document.querySelector("#pic")
                   , n = document.querySelector(".PolarBear")
                   , t = document.querySelector(".Liukanshan");
+                n.classList.add("PolarBear--out");
+                t.classList.remove("Liukanshan--in");
                 e.addEventListener("mouseenter", function() {
                     n.classList.add("PolarBear--out"),
                     t.classList.remove("Liukanshan--in")
@@ -72,6 +74,11 @@
       <div class="Liukanshan Liukanshan--in"></div>
     </div>
 
+    <!-- <div>
+      <div class="sp_d">div1</div>
+      <div class="sp_d">div2</div>
+      <div class="sp_d">div3</div>
+    </div> -->
 
 
     <div id="name">
@@ -88,9 +95,9 @@
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">（15寸的 T2，我可以说这是不用让公司来配给，想着替公司省钱吗：) ）</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">本来想说 "理解Html语义、表现与数据分离，对于 css、js，balabala..." ，想想还是算了，要是能过网投，详情面谈吧</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">简单来说说，强迫症患者，长期以来的编码过程中，严格遵照 space: 2 ｜ space: 4 的代码缩进</p>
-      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">用过、写过各类 css，讲讲可能讲不清楚，知道 Media Query，知道</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">用过、写过各类 css，讲讲可能讲不清楚，知道 Media Query，知道盒模型、box-sizing、flex 这些布局相关的东西</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">经常访问 css-tricks 这类网站，喜欢在前端页面实现中用 transform、key-frame animation 制作各类控件、元素的动画效果</p>
-      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">（至于写其它东西时候会 Google，会看 stackoverflow 之类的网站，这里不详提）</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">（至于写其它东西时候会 Google，会看 stackoverflow 之类的网站，这里不详谈）</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">至于 js 这块，在不断地使用与学习，最常用到 jQuery 框架，熟悉 ajax、RESTful 请求</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">有用自己写过的 json 之类格式的接口，或通过已定义接口完成前后端交互</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">Chrome 开发者工具的熟练度、深度还有待不断提高</p>
@@ -101,7 +108,7 @@
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">==========================我是一条分割线==========================</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">很自觉终身学习的自虐狂魔，若是当日指派 task 完成不了，会有加班自虐倾向 ：）</p>
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">另外身材瘦小，真抽不了烟，酒量也不咋的，但是三观正，与人相处友善</p>
-      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">毕竟计算机专业出身，其实涉略很多了，决定做个真 • 前端工程师，希望进入个好团队好好工作学习进步</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">毕竟计算机专业出身，其实涉略很多了，决定做个真 • 前端工程师，希望进入个氛围好的团队好好工作学习进步</p>
 
     </div>
 
@@ -112,7 +119,7 @@
 
       <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">2016 年 10 月 - 2016年 12 月</p>
       <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">在杭州拱墅优机菜圃，担任java程序员，编写三农邦配送系统子组件后台实现与前端页面</p>
-      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">后因公司搬迁梦想小镇（离我刚刚才搬好的家直线 15 公里），部门散伙</p>
+      <p class="font_base" style="padding-left: 48px;padding-top: 4px;padding-bottom: 4px;">后因公司搬迁梦想小镇（离我刚刚才搬好的住处直线 15 公里...其它人也都不肯干），整个部门散伙</p>
 
     </div>
 
@@ -140,7 +147,8 @@
 
     <div id="et" class="card">
       <p class="font_header">附加信息</p>
-      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">github地址：https://github.com/igoist/ </p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">自己博客尚未上线...</p>
+      <p class="font_base" style="padding-left: 32px;padding-top: 4px;padding-bottom: 4px;">github 地址：https://github.com/igoist/ </p>
     </div>
 
 
