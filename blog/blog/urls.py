@@ -18,4 +18,5 @@ urlpatterns = patterns('',
     url(r'^resume_smss/$', 'blog.views.resume_smss'),
 
     url(r'^slideshow/', include('slideshow.urls')),
+    url(r'^todolist/', include('todolist.urls')),
 )
