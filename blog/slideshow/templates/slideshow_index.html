@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="{% static 'reveal/css/reveal.css' %}">
+    <link rel="stylesheet" href="{% static 'reveal/css/theme/black.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'reveal/css/theme/just.css' %}"> -->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="{% static 'reveal/lib/css/zenburn.css' %}">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? "{% static 'reveal/css/print/pdf.css' %}" : "{% static 'reveal/css/print/paper.css' %}";
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- div slides begin -->
+      <div class="slides">
+        <!-- <section data-background-image="{% static 'img/bg.png' %}" data-background-size="100px" data-background-repeat="repeat">
+            <h2>Image</h2>
+        </section>
+        <section data-background-image="{% static 'img/rect.png' %}" data-background-size="100px" data-background-repeat="repeat">
+            <h2>This background image will be sized to 100px and repeated</h2>
+        </section> -->
+
+        <!-- <section>
+            <span class="fragment fade-in">
+                <span class="fragment fade-out">I'll fade in, then out</span>
+            </span>
+            <p class="fragment fade-down">I'm Robort.</p>
+            <p class="fragment highlight-current-blue">I'm Robort.</p>
+        </section> -->
+
+        {% block content %}
+        {% endblock %}
+
+        <section data-markdown>
+
+            <script type="text/template">
+                ## Page title
+
+                A paragraph with some text and a [link](http://hakim.se).
+            </script>
+        </section>
+
+        <section><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg>Slide 2</section>
+
+      </div>
+      <!-- div slides end -->
+    </div>
+
+    <script src="{% static 'reveal/lib/js/head.min.js' %}"></script>
+    <script src="{% static 'reveal/js/reveal.js' %}"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        // Markdonw、highlight、notes
+        dependencies: [
+          { src: "{% static 'reveal/plugin/markdown/marked.js' %}" },
+          { src: "{% static 'reveal/plugin/markdown/markdown.js' %}" },
+          { src: "{% static 'reveal/plugin/notes/notes.js' %}", async: true },
+          { src: "{% static 'reveal/plugin/highlight/highlight.js' %}", async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

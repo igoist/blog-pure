@@ -8,3 +8,8 @@
 （committed）
 3. 考虑到要将 base2 作为通用页面模块，将前面写在 base2.html 中的 sun-rise、shield 模块移到 home2.html 中（文件有重命名后面再考虑）
 （关于将 shield.css 、sunrise.css 移到 home2.html 中的相关疑问，再思考思考）
+4. 在 slideshow.models 中实现 model -- "SlideLink"，其主要 field 如下:
+  ---- index 编号，排序用
+  ---- title，即 header
+  ---- describe，for \<small\>
+  ---- link，具体链接，不用多讲

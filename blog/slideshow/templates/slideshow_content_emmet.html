@@ -1,0 +1,43 @@
+{% extends "slideshow_index.html" %}
+{% block content %}
+  <section class="stack">
+
+    <section data-markdown>
+      <script type="text/template">
+        ## Emmet for Sublime Text
+
+        Official [Emmet](http://emmet.io) plugin for Sublime Text.
+
+        * [How to install](#how-to-install)
+        * [Available actions](#available-actions)
+        * [Extensions support](#extensions-support)
+        * [Overriding keyboard shortcuts](#overriding-keyboard-shortcuts)
+        * [How to expand abbreviatoins with Tab key in other syntaxes](#how-to-expand-abbreviations-with-tab-in-other-syntaxes)
+        * [Notes about Tab key handler](#tab-key-handler)
+      </script>
+    </section>
+
+    <section data-markdown>
+      <script type="text/template">
+        ### How to install
+
+        *Warning:* this plugin may not work at all in some OSes since it written in JavaScript and uses [PyV8](http://code.google.com/p/pyv8/) and [Google V8](https://developers.google.com/v8/) binaries to run. If you experience problems or editor crashes please [fill an issue](https://github.com/sergeche/emmet-sublime/issues).
+
+        With [Package Control](http://wbond.net/sublime_packages/package_control):
+
+        1. Run “Package Control: Install Package” command, find and install `Emmet` plugin.
+        2. Restart ST editor (if required)
+
+        Manually:
+
+        1. Clone or [download](https://github.com/sergeche/emmet-sublime/archive/master.zip) git repo into your packages folder (in ST, find Browse Packages... menu item to open this folder)
+        2. Restart ST editor (if required)
+
+        --------------
+
+        **WARNING**: When plugin is installed, it will automatically download required PyV8 binary so you have to wait a bit (see _Loading PyV8 binary_ message on status bar). If you experience issues with automatic PyV8 loader, try to [install it manually](https://github.com/emmetio/pyv8-binaries).
+      </script>
+    </section>
+
+  </section>
+{% endblock %}
