@@ -1,0 +1,16 @@
+# .gitignore
+
+# Python:
+*.pyc
+settings.py
+
+# Mac
+.DS_Store
+
+lib/
+include/
+bin/
+
+pip-selfcheck.json
+
+stroll/
