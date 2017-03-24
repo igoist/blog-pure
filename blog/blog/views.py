@@ -3,6 +3,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, Http404
 
+def home(request):
+    return render(request, 'home2.html')
+
+
+
+# 几个单独的旧版本简历
 def resume(request):
     return render(request, 'resume/resume.html')
     #return HttpResponse("World");

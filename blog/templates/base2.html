@@ -1,0 +1,192 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="New version for mine blog's homepage.">
+
+  <title>Blog by 辣鸡天痕˚ on </title>
+  <!-- icon -->
+  <link rel="icon" type="image/png" href="{% static 'img/icon/star.png' %}" />
+
+  <!-- font css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'font-awesome/css/font-awesome.min.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'css/shield.css' %}">
+  <link rel="stylesheet" href="{% static 'css/sunrise.css' %}">
+
+  <!-- for menu & menuBtn -->
+  <link rel="stylesheet" href="{% static 'stroll/css/stroll.css' %}">
+  <link rel="stylesheet" href="{% static 'css/et-base.css' %}">
+
+
+</head>
+<body>
+
+    <!-- et-navgator begin -->
+    <div id="menu-btn" class="et-menu-button et-icon-menu">
+      <span>Menu</span>
+      <a class="custom-toggle"><del class="bar"></del><del class="bar"></del><del class="bar"></del></a>
+    </div>
+
+    <!-- sidebar -->
+    <div class="et-nav-v">
+      <h2 class="et-nav-title">Navigator</h2>
+      <ul class="wave">
+        <li class="et-nav-item"><a href="../../">Homepage</a></li>
+        <li class="et-nav-item"><a href="../">Slideshow<small>links almost there</small></a></li>
+        <li class="et-nav-item"><a href="../todolist">Todo List<small>test code - task list</small></a></li>
+        <li class="et-nav-item"><a href="timeline">Timeline<small>record the history</small></a></li>
+        <li class="et-nav-item"><a href="#">One</a></li>
+        <li class="et-nav-item"><a href="#">Two</a></li>
+        <li class="et-nav-item"><a href="#">Three</a></li>
+        <li class="et-nav-item"><a href="#">Four</a></li>
+        <li class="et-nav-item"><a href="#">Five</a></li>
+        <li class="et-nav-item"><a href="#">Six</a></li>
+        <li class="et-nav-item"><a href="#">Seven</a></li>
+        <li class="et-nav-item"><a href="#">Eight</a></li>
+        <li class="et-nav-item"><a href="#">Nine</a></li>
+        <li class="et-nav-item"><a href="#">Ten</a></li>
+        <li class="et-nav-item"><a href="#">Eleven</a></li>
+        <li class="et-nav-item"><a href="#">Twelve</a></li>
+        <li class="et-nav-item"><a href="#">Thirteen</a></li>
+        <li class="et-nav-item"><a href="#">Fourteen</a></li>
+        <li class="et-nav-item"><a href="#">Fifteen</a></li>
+        <li class="et-nav-item"><a href="#">Sixteen</a></li>
+        <li class="et-nav-item"><a href="#">Seventeen</a></li>
+        <li class="et-nav-item"><a href="#">Eighteen</a></li>
+      </ul>
+        <!-- <a class="subscribe-button icon-feed" href="http://delai.me/blog/rss/">Subscribe</a> -->
+    </div> <!-- $ sidebar -->
+    <!-- $ et-navgator -->
+
+
+    <div class="content pure-u-1 pure-u-md-4-4">
+
+      <svg viewbox="-200 -150 400 300">
+        <defs>
+          <line id="ray" x1="-5" x2="5"></line>
+          <clipPath id="cp">
+            <rect x="-200" y="-150" width="400" height="150"></rect>
+          </clipPath>
+        </defs>
+        <line id="line" x1="-76" x2="76"></line>
+        <!-- <text text-anchor="middle" y="45">sunrise</text> -->
+        <g id="sun" clip-path="url(#cp)">
+          <g id="mover">
+            <circle id="main" r="50"></circle>
+            <g id="eyes">
+              <circle r="3" cx="-13"></circle>
+              <circle r="3" cx="13"></circle>
+            </g>
+            <g id="rays">
+              <use xlink:href="#ray" transform="rotate(315) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(270) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(225) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(180) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(135) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(90) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(45) translate(70)"></use>
+              <use xlink:href="#ray" transform="rotate(0) translate(70)"></use>
+            </g>
+          </g>
+        </g>
+      </svg> <!-- $ sun-rise -->
+
+      <div class="shield">
+        <div class="circle-a"></div>
+        <div class="iam">
+          Hi, i am
+          <div class="star-a"></div>
+          <div class="star-b"></div>
+          <div class="corner-a"></div>
+          <div class="corner-b"></div>
+        </div>
+        <div class="name">天痕˚</div>
+        <div class="working-as">
+          <div class="line-left"></div>
+          <div class="line-right"></div>
+        </div>
+        <div class="product-designer">
+          Front-End Engineer
+          <div class="star-a"></div>
+          <div class="star-b"></div>
+          <div class="corner-a"></div>
+          <div class="corner-b"></div>
+        </div>
+        <div class="circle-b"></div>
+      </div> <!-- $ shield -->
+
+      <div>
+        {% block content %}
+        {% endblock %}
+      </div> <!-- $ block content -->
+    </div> <!-- $ content -->
+
+
+
+  <!-- egoist's universal component -->
+  <script src="{% static 'stroll/js/stroll.js' %}"></script>
+  <script src="{% static 'js/base.js' %}"></script>
+
+  <!-- 颜色变化控制 color -->
+  <script src="{% static 'js/color.js' %}"></script>
+  <script>
+    var items = [].slice.call(document.querySelectorAll('.et-nav-item'));
+
+    function createStyle(styleText) {
+      var style = document.createElement('style');
+      style.type = 'text/css';
+
+      // <style> element must be appended into DOM before setting `cssText`
+      // otherwise IE8 will interpret the text in IE7 mode.
+      document.body.appendChild(style);
+      if (style.styleSheet) {
+        style.styleSheet.cssText = styleText;
+      } else {
+        style.appendChild(document.createTextNode(styleText));
+      }
+
+      return style;
+    }
+
+    var gradientTpl = [
+      '.et-nav-item:nth-child(${n}):hover {',
+        'background-image: -webkit-linear-gradient(-15deg, transparent 40%, ${end} 100%);',
+        'background-image: -moz-linear-gradient(-15deg, transparent 40%, ${end} 100%);',
+        'background-image: linear-gradient(105deg, transparent 40%, ${end} 100%);',
+        'background-repeat: repeat;',
+      '}'
+    ].join('');
+
+    var style;
+    function randomize() {
+      var colors = kolor.random({
+        size: items.length,
+        s: 0.7,
+        l: 0.8,
+        space: 'rgba'
+      });
+
+      var styleText = '';
+      items.forEach(function (item, i) {
+        item.style.borderColor = colors[i].css();
+
+        if (style) {
+          style.parentNode.removeChild(style);
+        }
+
+        styleText += gradientTpl.replace(/\$\{n\}/g, i + 1).replace(/\$\{end\}/g, colors[i].a(0.3).css());
+        style = createStyle(styleText);
+      });
+    }
+
+    setInterval(function () {
+      randomize();
+    }, 3000);
+
+    randomize();
+  </script>
+</body>
+</html>
