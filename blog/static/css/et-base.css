@@ -55,6 +55,7 @@ body {
 }
 
 .et-nav-v ul li a {
+  white-space: nowrap;
   padding: 1.5rem 2rem;
   display: block;
   cursor: alias;
@@ -157,7 +158,18 @@ body {
   color: #9EABB3;
 }
 
+.content {
+  /*height: 718px;*/
+/*  -webkit-transition: transform 0.45s ease;
+     -moz-transition: transform 0.45s ease;
+      -ms-transition: transform 0.45s ease;
+       -o-transition: transform 0.45s ease;
+          transition: transform 0.45s ease;*/
+}
 
+.nav-opened .content {
+  /*transform: translateX(24rem);*/
+}
 
 .shield,
 #sun {
