@@ -1,0 +1,22 @@
+{% extends "base2.html" %}
+{% load staticfiles %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/timeline.css' %}">
+
+
+<section class="et-timeline-intro">
+  <div class="et-timeline-intro-container">
+    <h1>Vertical Timeline &darr;</h1>
+  </div>
+</section>
+
+<section class="et-timeline">
+  <ul>
+  </ul>
+</section>
+
+
+<script src="{% static 'js/timeline_index.js' %}"></script>
+<script src="{% static 'js/timeline.js' %}"></script>
+{% endblock %}

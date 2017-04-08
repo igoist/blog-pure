@@ -13,5 +13,8 @@
   ---- title，即 header
   ---- describe，for \<small\>
   ---- link，具体链接，不用多讲
+（committed）
 5. 内容添加不消说。把 api 写出来
 6. base.js 中去调用并完成测试
+（committed '.et-nav-v ul' 的 height 后面再去理会）
+7. 加入了 Timeline & Timeline API（完整过程这里省略）

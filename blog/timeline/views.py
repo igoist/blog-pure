@@ -5,6 +5,9 @@ from django.http import HttpResponse, Http404
 from .models import TimeLineItems
 import json
 
+def timeline(request):
+    return render(request, 'timeline.html')
+
 def api(request):
     list = TimeLineItems.objects.filter(is_delete=False)  # get all objects
     obj_array = []
