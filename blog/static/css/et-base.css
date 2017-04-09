@@ -46,6 +46,7 @@ body {
 .et-nav-v ul {
   position: relative;
   width: 24rem;
+  height: calc(100% - 81.5px);
   /*height: 60rem;*/
   height: 100%;
   margin: 0;
@@ -69,7 +70,7 @@ body {
 
 #menu-btn {
   z-index: 9999;
-  position: absolute;
+  position: fixed;
   top: 3.6rem;
   left: 4.2rem;
   width: 10rem;

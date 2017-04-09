@@ -32,6 +32,10 @@ body {
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+.et-timeline {
+  margin-bottom: 16rem;
+}
+
 .et-timeline ul {
   padding: 50px 0;
 }

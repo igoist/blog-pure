@@ -47,5 +47,8 @@ try {
 
 
 window.onload = (function() {
+  var tmp = document.querySelector('.et-nav-v ul');
+  tmp.style.height = (window.innerHeight - 81.5) + 'px';
+  // document.getElementById("et-main").style.height = window.innerHeight + "px";
   stroll.bind('.et-nav-v ul');
 });

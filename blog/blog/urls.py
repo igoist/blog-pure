@@ -21,4 +21,5 @@ urlpatterns = patterns('',
 
     url(r'^slideshow/', include('slideshow.urls')),
     url(r'^todolist/', include('todolist.urls')),
+    url(r'^timeline/', include('timeline.urls')), # timeline 历史时间轴
 )
