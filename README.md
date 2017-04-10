@@ -19,3 +19,4 @@
 （committed '.et-nav-v ul' 的 height 后面再去理会）
 - [x] 7. 加入了 Timeline & Timeline API（完整过程这里省略）
 - [x] 8. 几个琐碎的内容：后台数据调整; menu-btn 样式 fixed; timeline 'margin-bottom'; '.et-nav-v ul' js 调整高度
+- [x] 9. Add spinner for pages. (By the way, gradually replace '\"' to '\'' for js files)
