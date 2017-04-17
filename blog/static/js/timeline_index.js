@@ -9,6 +9,7 @@
     xhr.send(null);
 
     listObj = JSON.parse(xhr.responseText);
+    listObj.reverse();
   }  catch(e) {
     console.log(e);
     console.log("It's on Other Page Or by Error ?");
