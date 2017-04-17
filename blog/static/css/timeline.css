@@ -207,6 +207,8 @@ body {
   z-index: 999;
 }
 .et-timeline .card p {
+  width: inherit;
+  box-sizing: border-box;
   color: rgba(0,0,0,.6);
   font-family: 'Raleway', sans-serif;
   font-size: 100%;
