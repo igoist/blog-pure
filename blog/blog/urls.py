@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     url(r'^slideshow/', include('slideshow.urls')),
     url(r'^todolist/', include('todolist.urls')),
     url(r'^timeline/', include('timeline.urls')), # timeline 历史时间轴
+    url(r'^qrcode/', include('qrcode.urls')), # QRCode 毕设
 )
