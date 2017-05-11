@@ -10,7 +10,7 @@ def qrcode(request):
     return render(request, 'qrcode.html')
 
 def api_pv(request):
-    list = ProductAndView.objects.filter(is_delete=False)  # get all objects
+    list = ProductAndView.objects.filter(is_delete=False).order_by('v', 'index')  # get all objects
     obj_array = []
     for i in list:
         tmp_obj = {}

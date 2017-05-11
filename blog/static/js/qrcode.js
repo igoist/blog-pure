@@ -40,14 +40,22 @@ class Items extends React.Component {
     super(props);
     this.op1 = []; // product
     this.op2 = []; // view
-    this.lastV = '';
+    // this.lastV = '';
+    this.op2.push(<option key={''} disabled value=''>请选择视图</option>);
+    this.op1.push(<option key={''} disabled value=''>请选择产品</option>);
     this.props.items.forEach((item, index) => {
-      if (item.v !== this.lastV) {
-        this.op2.push(<option key={index.toString()}>{item.v}</option>);
-      }
-      this.op1.push(<option key={index.toString()}>{item.p}</option>);
-      this.lastV = item.v;
+      // if (item.v !== this.lastV) {
+      //   this.op2.push(<option key={index.toString()} value={item.v}>{item.v}</option>);
+      // }
+      // this.op1.push(<option key={index.toString()} value={item.p}>{item.p}</option>);
+      // this.lastV = item.v;
+      this.op2.push(<option key={index.toString()} value={item.v}>{item.v}</option>)
     });
+    // 都交由 parent 去处理，这里不设置 state
+    // this.state = {
+    //   v1: '产品4',
+    //   v2: '视图2'
+    // };
 
     this.handleProductChange = this.handleProductChange.bind(this);
     this.handleViewChange = this.handleViewChange.bind(this);
@@ -68,20 +76,21 @@ class Items extends React.Component {
 
   render() {
     var rows = [];
-
-    this.props.items.forEach((item, index) => {
-
-      // if(item.done) {
-      //   rows.push(<li className='item done' key={index.toString()} id={index} onClick={this.props.handleItemClick}>{item.text}</li>);
-      // } else {
-      //   rows.push(<li className='item' key={index.toString()} id={index} onClick={this.props.handleItemClick}>{item.text}</li>);
-      // }
-      rows.push(<li className='item' key={index.toString()}><span>{item.index}</span><span>{item.info}</span><span>{item.p}</span><span>{item.v}</span></li>);
+    this.props.items.forEach((item, index1) => {
+      if (this.props.v2 == '') {
+        item.products.forEach((p, index2) => {
+          rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{p.info}</span><span>{p.p}</span><span>{item.v}</span></li>);
+        });
+      } else if (item.v == this.props.v2) {
+        item.products.forEach((p, index2) => {
+          rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{p.info}</span><span>{p.p}</span><span>{item.v}</span></li>);
+        });
+      }
     });
     return (
       <div id='items-wrap'>
-        <select value={this.props.v2} onChange={this.handleViewChange}>{this.op2}</select>
-        <select value={this.props.v1} onChange={this.handleProductChange}>{this.op1}</select>
+        <select name='view' value={this.props.v2} onChange={this.handleViewChange}>{this.op2}</select>
+        <select name='product' value={this.props.v1} onChange={this.handleProductChange}>{this.op1}</select>
         <ul className='items'>
           {rows}
         </ul>
@@ -93,17 +102,34 @@ class Items extends React.Component {
 class ProductAndView extends React.Component {
   constructor(props) {
     super(props);
-    this.items = [
-      {text: 'axxxxxx', done: false},
-      {text: 'bxxxxxxx', done: true}
-    ];
+    this.items = [];
     try {
-      var xhr = new XMLHttpRequest();
+      let xhr = new XMLHttpRequest();
       xhr.open('get', 'http://127.0.0.1:8000/qrcode/api/', false);
       xhr.send(null);
-      var listObj = JSON.parse(xhr.responseText);
+      let listObj = JSON.parse(xhr.responseText);
       console.log(listObj);
-      this.items = listObj;
+      let tmp_p = [];
+      let last = '';
+      listObj.forEach((item, index) => {
+        if (item.v !== last) {
+          if (index !== 0) {
+            if (index !== (listObj.length - 1)) {
+              this.items.push({products: tmp_p, v: last});
+              tmp_p = [];
+            // important below
+            } else {
+              this.items.push({products: tmp_p, v: last});
+              tmp_p = [];
+              tmp_p.push({info: item.info, p: item.p});
+              this.items.push({products: tmp_p, v: item.v});
+            }
+          }
+        }
+        tmp_p.push({info: item.info, p: item.p});
+        last = item.v;
+      });
+      console.log(this.items);
     } catch(e) {
       console.log(e);
       console.log("It's on Other Page Or by Error ?");
@@ -113,8 +139,8 @@ class ProductAndView extends React.Component {
       // clickFlag: false,
       filterText: '',
       count: this.items.length,
-      v1: '产品3', // 产品
-      v2: '视图2' // 视图
+      v1: '', // 产品
+      v2: '' // 视图
     };
 
     this.iHeight = 32 + 1;
@@ -165,7 +191,6 @@ class ProductAndView extends React.Component {
   }
 
   handleItemClick(e) {
-    // console.log(e.target.id);
     this.items[e.target.id].done = !this.items[e.target.id].done;
     this.setState({
       clickFlag: !this.state.clickFlag,
