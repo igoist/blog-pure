@@ -35,6 +35,8 @@ class ProductAndView(models.Model):
     is_delete = models.BooleanField(default = False) # delele flag
     def __unicode__(self):
         return self.info
+    # def __lt__(self, other):
+    #      return self.v < other.v
     class Meta:
         ordering = ['index', 'info']
 
