@@ -40,16 +40,10 @@ class Items extends React.Component {
     super(props);
     this.op1 = []; // product
     this.op2 = []; // view
-    // this.lastV = '';
     this.op2.push(<option key={''} disabled value=''>请选择视图</option>);
     this.op1.push(<option key={''} disabled value=''>请选择产品</option>);
     this.props.items.forEach((item, index) => {
-      // if (item.v !== this.lastV) {
-      //   this.op2.push(<option key={index.toString()} value={item.v}>{item.v}</option>);
-      // }
-      // this.op1.push(<option key={index.toString()} value={item.p}>{item.p}</option>);
-      // this.lastV = item.v;
-      this.op2.push(<option key={index.toString()} value={item.v}>{item.v}</option>)
+      this.op2.push(<option key={index.toString()} value={item.v}>{item.v}</option>);
     });
     // 都交由 parent 去处理，这里不设置 state
     // this.state = {
@@ -79,14 +73,24 @@ class Items extends React.Component {
     this.props.items.forEach((item, index1) => {
       if (this.props.v2 == '') {
         item.products.forEach((p, index2) => {
-          rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{p.info}</span><span>{p.p}</span><span>{item.v}</span></li>);
+          rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{item.v}</span><span>{p.p}</span><span>{p.info}</span></li>);
         });
-      } else if (item.v == this.props.v2) {
-        item.products.forEach((p, index2) => {
-          rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{p.info}</span><span>{p.p}</span><span>{item.v}</span></li>);
-        });
+      } else {
+        if (item.v == this.props.v2) {
+          // console.log(item.products);
+          this.op1 = [];
+          item.products.forEach((p, index2) => {
+            this.op1.push(<option key={index2.toString()} value={p.p}>{p.p}</option>);
+            if (this.props.v1 == '') {
+              rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{item.v}</span><span>{p.p}</span><span>{p.info}</span></li>);
+            } else if (p.p == this.props.v1) {
+              rows.push(<li className='item' key={index1.toString() + '-' + index2.toString()}><span>{item.v}</span><span>{p.p}</span><span>{p.info}</span></li>);
+            }
+          });
+        }
       }
     });
+
     return (
       <div id='items-wrap'>
         <select name='view' value={this.props.v2} onChange={this.handleViewChange}>{this.op2}</select>
@@ -123,13 +127,15 @@ class ProductAndView extends React.Component {
               tmp_p = [];
               tmp_p.push({info: item.info, p: item.p});
               this.items.push({products: tmp_p, v: item.v});
+              // 若不 return，👇下面还有句 'tmp_p.push...'
+              return ;
             }
           }
         }
         tmp_p.push({info: item.info, p: item.p});
         last = item.v;
       });
-      console.log(this.items);
+      // console.log(this.items);
     } catch(e) {
       console.log(e);
       console.log("It's on Other Page Or by Error ?");
@@ -178,16 +184,32 @@ class ProductAndView extends React.Component {
     this.setState({
       v1: text
     });
-    console.log(this.state.v1);
-    console.log(text);
+
+    const sb = document.getElementById('search-bar');
+    let tmp = sb.offsetHeight + this.iHeight * 1;
+    let todo = document.querySelector('.card');
+    todo.style.height = tmp + 'px';
   }
 
   handleViewChange(text) {
     this.setState({
-      v2: text
+      v2: text,
+      v1: ''
     });
-    console.log(this.state.v2);
-    console.log(text);
+    const sb = document.getElementById('search-bar');
+    let length = 0;
+    this.items.forEach((item, index1) => {
+      console.log(item.v);
+      if (item.v == text) {
+        length = item.products.length;
+      }
+    });
+    // length++;
+    // console.log(length);
+    let tmp = sb.offsetHeight + this.iHeight * length;
+    let todo = document.querySelector('.card');
+    todo.style.height = tmp + 'px';
+    // console.log(this);
   }
 
   handleItemClick(e) {
