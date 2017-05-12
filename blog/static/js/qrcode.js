@@ -103,6 +103,13 @@ class Items extends React.Component {
   }
 }
 
+function adjustHeight(iHeight, length) {
+  const sb = document.getElementById('search-bar');
+  let tmp = sb.offsetHeight + iHeight * length;
+  let todo = document.querySelector('.card');
+  todo.style.height = tmp + 'px';
+}
+
 class ProductAndView extends React.Component {
   constructor(props) {
     super(props);
@@ -185,10 +192,7 @@ class ProductAndView extends React.Component {
       v1: text
     });
 
-    const sb = document.getElementById('search-bar');
-    let tmp = sb.offsetHeight + this.iHeight * 1;
-    let todo = document.querySelector('.card');
-    todo.style.height = tmp + 'px';
+    adjustHeight(this.iHeight, 1);
   }
 
   handleViewChange(text) {
@@ -204,12 +208,7 @@ class ProductAndView extends React.Component {
         length = item.products.length;
       }
     });
-    // length++;
-    // console.log(length);
-    let tmp = sb.offsetHeight + this.iHeight * length;
-    let todo = document.querySelector('.card');
-    todo.style.height = tmp + 'px';
-    // console.log(this);
+    adjustHeight(this.iHeight, length);
   }
 
   handleItemClick(e) {
