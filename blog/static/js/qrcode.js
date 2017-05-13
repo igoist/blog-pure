@@ -1,5 +1,46 @@
 class Select extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.handleClick = this.handleClick.bind(this);
+
+    // <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
+    // <div data-reactroot="">
+
+    // </div>
+    // </div>
+  }
+
+  handleClick(e) {
+    // console.log(e);
+    // console.log(this);
+    document.querySelector('.et-select').classList.toggle('et-select-open');
+    document.querySelector('.et-select-dropdown').classList.toggle('et-select-dropdown-hidden');
+  }
+
+  render() {
+
+    return (
+      <div className='et-select' style={{width: '120px'}} onClick={this.handleClick}>
+        <div className='et-select-selection et-select-selection--single'>
+          <div className='et-select-selection__rendered'>
+            <div className="et-select-selection-selected-value" title="Jack" style={{display: 'block', opacity: '1'}}>Jack</div>
+            <span className="et-select-arrow" unselectable="unselectable" style={{userSelect: 'none'}}><b></b></span>
+          </div>
+        </div>
+        <div className='et-select-dropdown et-select-dropdown-hidden et-select-dropdown-placement-bottomLeft' style={{left: '0px', top: '32px', width: '120px'}}>
+          <div style={{overflow: 'auto'}}>
+            <ul className='et-select-dropdown-menu et-select-dropdown-menu-vertical et-select-dropdown-menu-root' role='menu'>
+              <li unselectable='unselectable' className='et-select-dropdown-menu-item' role='menuitem' aria-selected='false' style={{userSelect: 'none'}}>Jack</li>
+              <li unselectable='unselectable' className='et-select-dropdown-menu-item-selected et-select-dropdown-menu-item' role='menuitem' aria-selected='true' style={{userSelect: 'none'}}>Lucy</li>
+              <li unselectable='unselectable' className='et-select-dropdown-menu-item' role='menuitem' aria-selected='false' style={{userSelect: 'none'}}>Disabled</li>
+              <li unselectable='unselectable' className='et-select-dropdown-menu-item' role='menuitem' aria-selected='false' style={{userSelect: 'none'}}>yiminghe</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 // class Option extends React.Component {
@@ -233,6 +274,9 @@ class ProductAndView extends React.Component {
   render() {
     return (
       <div id='todo-wrap'>
+        <Select>
+        </Select>
+        <hr />
         <div className='card'>
 
           <Items

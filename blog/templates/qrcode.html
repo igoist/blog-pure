@@ -8,7 +8,17 @@
     <script src="{% static 'js/build/react-dom.js' %}"></script>
     <script src="{% static 'js/build/browser.min.js' %}"></script>
     <!-- <link rel="stylesheet" href="./css/index.scss"> -->
+
     <style type="text/css">
+
+      @font-face {
+        font-family: 'eticon';
+        src: url("{% static 'font-awesome/f2.eot' %}");
+        src: url("{% static 'font-awesome/font_0qcp222wvwijm7vi.eot' %}") format('embedded-opentype'), /* chrome、firefox */
+             url("{% static 'font-awesome/font_0qcp222wvwijm7vi.woff' %}") format('woff'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+             url("{% static 'font-awesome/font_0qcp222wvwijm7vi.ttf' %}") format('truetype'), /* iOS 4.1- */
+             url("{% static 'font-awesome/font_0qcp222wvwijm7vi.svg#iconfont' %}") format('svg');
+      }
       #todo-wrap {
         position: absolute;
         top: 20%;
@@ -86,6 +96,8 @@
         z-index: -3;
       }
     </style>
+
+    <link rel="stylesheet" href="{% static 'css/et-components/select/select.css' %}">
   </head>
   <body>
 
