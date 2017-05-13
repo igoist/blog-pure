@@ -1,3 +1,10 @@
+class Select extends React.Component {
+
+}
+
+// class Option extends React.Component {
+// }
+
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
@@ -92,20 +99,25 @@ class Items extends React.Component {
     });
 
     return (
-      <div id='items-wrap'>
-        <select name='view' value={this.props.v2} onChange={this.handleViewChange}>{this.op2}</select>
-        <select name='product' value={this.props.v1} onChange={this.handleProductChange}>{this.op1}</select>
-        <ul className='items'>
-          {rows}
-        </ul>
+      <div>
+        <div id='sel-wrap'>
+          <select name='view' value={this.props.v2} onChange={this.handleViewChange}>{this.op2}</select>
+          <select name='product' value={this.props.v1} onChange={this.handleProductChange}>{this.op1}</select>
+        </div>
+        <div id='items-wrap'>
+
+          <ul className='items'>
+            {rows}
+          </ul>
+        </div>
       </div>
     );
   }
 }
 
 function adjustHeight(iHeight, length) {
-  const sb = document.getElementById('search-bar');
-  let tmp = sb.offsetHeight + iHeight * length;
+  const sel = document.getElementById('sel-wrap');
+  let tmp = sel.offsetHeight + iHeight * length;
   let todo = document.querySelector('.card');
   todo.style.height = tmp + 'px';
 }
@@ -200,7 +212,6 @@ class ProductAndView extends React.Component {
       v2: text,
       v1: ''
     });
-    const sb = document.getElementById('search-bar');
     let length = 0;
     this.items.forEach((item, index1) => {
       console.log(item.v);
@@ -218,11 +229,12 @@ class ProductAndView extends React.Component {
     });
   }
 
+  // <SearchBar onSubmit={this.handleSubmit} onChange={this.handleTextInputChange} />
   render() {
     return (
       <div id='todo-wrap'>
         <div className='card'>
-          <SearchBar onSubmit={this.handleSubmit} onChange={this.handleTextInputChange} />
+
           <Items
             items={this.items}
             v1={this.state.v1}
@@ -243,11 +255,9 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// console.log(document.getElementById('todo-wrap'));
-const sb = document.getElementById('search-bar');
+const sel = document.getElementById('sel-wrap');
 const ul = document.getElementById('items-wrap');
-console.log(sb.offsetHeight);
-const tmp = sb.offsetHeight + ul.offsetHeight;
+const tmp = sel.offsetHeight + ul.offsetHeight;
 let todo = document.querySelector('.card');
 todo.style.height = tmp + 'px';
 todo = null;
